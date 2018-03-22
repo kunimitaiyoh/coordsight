@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Coordsight</string>
+    <string name="title_activity_sight">SightActivity</string>
+    <string name="action_settings">Settings</string>
 </resources>
