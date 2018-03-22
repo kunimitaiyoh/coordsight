@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 
 class SightActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sight)
@@ -20,5 +19,4 @@ class SightActivity : AppCompatActivity() {
                     .setAction("Action", null).show()
         }
     }
-
 }
