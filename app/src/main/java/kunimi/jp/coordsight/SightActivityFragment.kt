@@ -8,7 +8,6 @@ import android.hardware.camera2.CameraCaptureSession
 import android.hardware.camera2.CameraCharacteristics
 import android.hardware.camera2.CameraDevice
 import android.hardware.camera2.CameraManager
-import android.hardware.camera2.CaptureRequest
 import android.os.Bundle
 import android.os.Handler
 import android.support.v4.app.ActivityCompat
@@ -20,9 +19,6 @@ import android.view.View
 import android.view.ViewGroup
 import java.util.*
 
-/**
- * A placeholder fragment containing a simple view.
- */
 class SightActivityFragment : Fragment() {
     private var mCameraDevice: CameraDevice? = null
     private lateinit var mTextureView: TextureView
@@ -44,7 +40,6 @@ class SightActivityFragment : Fragment() {
             cameraDevice.close()
             mCameraDevice = null
         }
-
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
