@@ -17,11 +17,15 @@ import android.view.Surface
 import android.view.TextureView
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import java.util.*
 
 class SightActivityFragment : Fragment() {
     private var mCameraDevice: CameraDevice? = null
+
     private lateinit var mTextureView: TextureView
+    private lateinit var mMessage: TextView
+
     private val mBackgroundHandler = Handler()
     private var mCaptureSession: CameraCaptureSession? = null
 
@@ -61,6 +65,9 @@ class SightActivityFragment : Fragment() {
             override fun onSurfaceTextureUpdated(surface: SurfaceTexture) {
             }
         }
+        mMessage = root.findViewById(R.id.message) as TextView
+        mMessage.setText(R.string.app_name)
+
 
         return root
     }
