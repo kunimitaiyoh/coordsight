@@ -1,6 +1,5 @@
 package kunimi.jp.coordsight
 
-import android.Manifest
 import android.content.Context
 import android.graphics.SurfaceTexture
 import android.hardware.camera2.CameraAccessException
@@ -10,7 +9,6 @@ import android.hardware.camera2.CameraDevice
 import android.hardware.camera2.CameraManager
 import android.os.Bundle
 import android.os.Handler
-import android.support.v4.app.ActivityCompat
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.Surface
@@ -68,7 +66,6 @@ class SightActivityFragment : Fragment() {
         mMessage = root.findViewById(R.id.message) as TextView
         mMessage.setText(R.string.app_name)
 
-
         return root
     }
 
@@ -78,7 +75,7 @@ class SightActivityFragment : Fragment() {
             val selectedCameraId = manager.cameraIdList
                     .firstOrNull { manager.getCameraCharacteristics(it).get(CameraCharacteristics.LENS_FACING) == CameraCharacteristics.LENS_FACING_BACK }
             if (selectedCameraId != null) {
-                ActivityCompat.requestPermissions(activity, arrayOf(Manifest.permission.CAMERA), 1)
+
                 manager.openCamera(selectedCameraId, mStateCallback, mBackgroundHandler)
             }
         } catch (e: CameraAccessException) {
