@@ -19,15 +19,15 @@ import android.widget.TextView
 import java.util.*
 
 class SightActivityFragment : Fragment() {
-    private var mCameraDevice: CameraDevice? = null
+    var mCameraDevice: CameraDevice? = null
 
-    private lateinit var mTextureView: TextureView
-    private lateinit var mMessage: TextView
+    lateinit var mTextureView: TextureView
+    lateinit var mMessage: TextView
 
-    private val mBackgroundHandler = Handler()
-    private var mCaptureSession: CameraCaptureSession? = null
+    val mBackgroundHandler = Handler()
+    var mCaptureSession: CameraCaptureSession? = null
 
-    private val mStateCallback = object : CameraDevice.StateCallback() {
+    val mStateCallback = object : CameraDevice.StateCallback() {
         override fun onOpened(cameraDevice: CameraDevice) {
             mCameraDevice = cameraDevice
             createCameraPreviewSession()
@@ -69,7 +69,7 @@ class SightActivityFragment : Fragment() {
         return root
     }
 
-    private fun openCamera() {
+    fun openCamera() {
         try {
             val manager = activity.getSystemService(Context.CAMERA_SERVICE) as CameraManager
             val selectedCameraId = manager.cameraIdList
@@ -85,7 +85,7 @@ class SightActivityFragment : Fragment() {
         }
     }
 
-    private fun createCameraPreviewSession() {
+    fun createCameraPreviewSession() {
         val texture = mTextureView.surfaceTexture
         texture.setDefaultBufferSize(mTextureView.width, mTextureView.height)
         val surface = Surface(texture)
