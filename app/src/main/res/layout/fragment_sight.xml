@@ -11,4 +11,18 @@
         android:id="@+id/texture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/message"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/margin_regular"
+        android:paddingEnd="@dimen/margin_regular"
+        android:paddingStart="@dimen/margin_regular"
+        android:paddingTop="@dimen/margin_regular"
+        app:layout_constraintBottom_toBottomOf="@+id/texture"
+        app:layout_constraintLeft_toLeftOf="@+id/texture"
+        app:layout_constraintRight_toRightOf="@+id/texture"
+        tools:text="message" />
+
 </android.support.constraint.ConstraintLayout>
